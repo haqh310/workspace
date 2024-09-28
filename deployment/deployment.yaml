@@ -30,13 +30,16 @@ spec:
             port: 5153
           initialDelaySeconds: 5
           timeoutSeconds: 5
+        resources:
+          requests:
+            memory: "1000Mi"
+            cpu: "250m"
+          limits:
+            memory: "2000Mi"
+            cpu: "500m"
         envFrom:
         - configMapRef:
-            name: psgconfigmap
-        env:
-        - name: DB_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: psgsecret
-              key: DB_PASSWORD
+            name: dbconfigmap
+        - secretRef:
+            name: dbsecret   
       restartPolicy: Always
