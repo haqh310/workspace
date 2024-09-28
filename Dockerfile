@@ -8,7 +8,7 @@ ENV DB_NAME=mydatabase
 
 WORKDIR /app
 
-COPY . /app/
+COPY /analytics /app
 
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
