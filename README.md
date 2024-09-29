@@ -129,3 +129,47 @@ Please provide up to 3 sentences for each suggestion. Additional content in your
 ### Best Practices
 * Dockerfile uses an appropriate base image for the application being deployed. Complex commands in the Dockerfile include a comment describing what it is doing.
 * The Docker images use semantic versioning with three numbers separated by dots, e.g. `1.2.1` and  versioning is visible in the  screenshot. See [Semantic Versioning](https://semver.org/) for more details.
+
+
+### Project Structure
+├── buildspec.yaml
+├── postgresql-deployment.yaml
+├── postgresql-service.yaml
+├── pv.yaml
+├── pvc.yaml
+├── README.md
+├── analytics
+│   ├── Dockerfile
+│   ├── __init__.py
+│   ├── app.py
+│   ├── config.py
+│   ├── model.py
+│   └── requirements.txt
+├── db
+│   ├── 1_create_tables.sql
+│   ├── 2_seed_users.sql
+│   └── 3_seed_tokens.sql
+├── deployment
+│   ├── configmap.yaml
+│   ├── deployment.yaml
+│   ├── secret.yaml
+│   └── service.yaml
+├── screenshots
+│   ├── api.png
+│   ├── api1.png
+│   ├── api2.png
+│   ├── api3.png
+│   ├── cloudwatch.png
+│   ├── codebuild.png
+│   ├── ecr.png
+│   ├── kubectl_describe_pod.png
+│   ├── kubectl_describe_svc.png
+│   ├── kubectl_get_pods.png
+│   ├── kubectl_get_svc.png
+│   ├── get_deployment.png
+│   └── logs.png
+
+
+scripts: Bash scripts to facilitate project tasks.
+db: SQL scripts for seeding data.
+deployments: Kubernetes YAML files for deployment and configuration.
