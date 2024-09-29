@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: coworking
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     service: coworking
   ports:
